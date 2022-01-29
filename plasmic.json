@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -40,6 +40,19 @@
           "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "t2ViKBu55f",
+          "name": "Fetcher",
+          "type": "managed",
+          "projectId": "rdregu4mMb4hXErVfc3qjL",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicFetcher.tsx",
+          "importSpec": {
+            "modulePath": "Fetcher.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicFetcher.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
