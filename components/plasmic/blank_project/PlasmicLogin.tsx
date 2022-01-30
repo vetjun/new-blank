@@ -33,17 +33,11 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import TextInput from "../../TextInput"; // plasmic-import: w14gK1007wL/component
-import Button from "../../Button"; // plasmic-import: V7BbCwr-pLu/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: rdregu4mMb4hXErVfc3qjL/projectcss
 import sty from "./PlasmicLogin.module.css"; // plasmic-import: LxF1egWM_2/css
-
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: KSBOK07UX8U/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: RCMerZM6K3F/icon
-import Icon3Icon from "./icons/PlasmicIcon__Icon3"; // plasmic-import: vm-uGfGqmSN/icon
 
 export type PlasmicLogin__VariantMembers = {};
 
@@ -57,9 +51,6 @@ export const PlasmicLogin__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogin__OverridesType = {
   root?: p.Flex<"div">;
-  usernameInput?: p.Flex<typeof TextInput>;
-  passwordInput?: p.Flex<typeof TextInput>;
-  loginButton?: p.Flex<typeof Button>;
 };
 
 export interface DefaultLoginProps {}
@@ -96,50 +87,20 @@ function PlasmicLogin__RenderFunc(props: {
             projectcss.root_reset,
             sty.root
           )}
-        >
-          <TextInput
-            data-plasmic-name={"usernameInput"}
-            data-plasmic-override={overrides.usernameInput}
-            className={classNames("__wab_instance", sty.usernameInput)}
-            name={"usernameInputVal" as const}
-            placeholder={"Username" as const}
-          />
-
-          <TextInput
-            data-plasmic-name={"passwordInput"}
-            data-plasmic-override={overrides.passwordInput}
-            className={classNames("__wab_instance", sty.passwordInput)}
-            name={"passwordInputVal" as const}
-            placeholder={"Password" as const}
-          />
-
-          <Button
-            data-plasmic-name={"loginButton"}
-            data-plasmic-override={overrides.loginButton}
-            className={classNames("__wab_instance", sty.loginButton)}
-          >
-            {"Login"}
-          </Button>
-        </div>
+        />
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "usernameInput", "passwordInput", "loginButton"],
-  usernameInput: ["usernameInput"],
-  passwordInput: ["passwordInput"],
-  loginButton: ["loginButton"]
+  root: ["root"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  usernameInput: typeof TextInput;
-  passwordInput: typeof TextInput;
-  loginButton: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -199,9 +160,6 @@ export const PlasmicLogin = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    usernameInput: makeNodeComponent("usernameInput"),
-    passwordInput: makeNodeComponent("passwordInput"),
-    loginButton: makeNodeComponent("loginButton"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,
