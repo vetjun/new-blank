@@ -33,3 +33,10 @@
   top: 34.046875px;
   min-width: 0;
 }
+.fetcher:global(.__wab_instance) {
+  max-width: 100%;
+  position: absolute;
+  left: 572px;
+  top: 378px;
+  z-index: 1;
+}

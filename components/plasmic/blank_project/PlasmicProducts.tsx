@@ -33,6 +33,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Fetcher from "../../Fetcher"; // plasmic-import: t2ViKBu55f/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -53,6 +54,7 @@ export type PlasmicProducts__OverridesType = {
   root2?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
   text?: p.Flex<"div">;
+  fetcher?: p.Flex<typeof Fetcher>;
 };
 
 export interface DefaultProductsProps {}
@@ -107,6 +109,12 @@ function PlasmicProducts__RenderFunc(props: {
               {"This line is before from table"}
             </div>
           </div>
+
+          <Fetcher
+            data-plasmic-name={"fetcher"}
+            data-plasmic-override={overrides.fetcher}
+            className={classNames("__wab_instance", sty.fetcher)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -114,9 +122,10 @@ function PlasmicProducts__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root2: ["root2", "freeBox", "text"],
+  root2: ["root2", "freeBox", "text", "fetcher"],
   freeBox: ["freeBox", "text"],
-  text: ["text"]
+  text: ["text"],
+  fetcher: ["fetcher"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -125,6 +134,7 @@ type NodeDefaultElementType = {
   root2: "div";
   freeBox: "div";
   text: "div";
+  fetcher: typeof Fetcher;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -186,6 +196,7 @@ export const PlasmicProducts = Object.assign(
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
     text: makeNodeComponent("text"),
+    fetcher: makeNodeComponent("fetcher"),
 
     // Metadata about props expected for PlasmicProducts
     internalVariantProps: PlasmicProducts__VariantProps,
