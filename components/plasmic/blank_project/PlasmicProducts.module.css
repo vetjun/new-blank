@@ -1,4 +1,4 @@
-.root {
+.root2 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -9,4 +9,27 @@
   align-items: center;
   min-width: 0;
   min-height: 0;
+}
+.freeBox {
+  display: block;
+  position: fixed;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  right: 0;
+  padding: 8px;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  left: 413px;
+  top: 34.046875px;
+  min-width: 0;
 }

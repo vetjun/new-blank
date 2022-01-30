@@ -50,7 +50,9 @@ type ArgPropType = keyof PlasmicProducts__ArgsType;
 export const PlasmicProducts__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProducts__OverridesType = {
-  root?: p.Flex<"div">;
+  root2?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultProductsProps {}
@@ -78,29 +80,51 @@ function PlasmicProducts__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
+          data-plasmic-name={"root2"}
+          data-plasmic-override={overrides.root2}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
             projectcss.all,
             projectcss.root_reset,
-            sty.root
+            sty.root2
           )}
-        />
+        >
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {"This line is before from table"}
+            </div>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root2: ["root2", "freeBox", "text"],
+  freeBox: ["freeBox", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root2: "div";
+  freeBox: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -147,7 +171,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "root2") {
     func.displayName = "PlasmicProducts";
   } else {
     func.displayName = `PlasmicProducts.${nodeName}`;
@@ -157,9 +181,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicProducts = Object.assign(
   // Top-level PlasmicProducts renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("root2"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicProducts
     internalVariantProps: PlasmicProducts__VariantProps,
