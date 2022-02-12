@@ -169,6 +169,7 @@ function PlasmicButton__RenderFunc(props: {
         projectcss.all,
         projectcss.button,
         projectcss.root_reset,
+        projectcss.plasmic_default_styles,
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,

@@ -36,8 +36,10 @@
 }
 .fetcher:global(.__wab_instance) {
   max-width: 100%;
-  position: absolute;
-  left: 1063px;
-  top: 816px;
+  position: fixed;
+  left: 0;
+  top: auto;
   z-index: 1;
+  right: 0;
+  bottom: 0;
 }

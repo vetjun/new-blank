@@ -107,6 +107,19 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "button"
+        },
+        {
+          "id": "PG86SX5hUp",
+          "name": "Features",
+          "type": "managed",
+          "projectId": "rdregu4mMb4hXErVfc3qjL",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicFeatures.tsx",
+          "importSpec": {
+            "modulePath": "../pages/features.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicFeatures.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -144,7 +157,14 @@
         }
       ],
       "indirect": false,
-      "codeComponents": []
+      "codeComponents": [
+        {
+          "id": "Uz-bQox2j-",
+          "name": "ProductCard",
+          "componentImportPath": "./components/ProductCard"
+        }
+      ],
+      "globalContextsFilePath": ""
     }
   ],
   "globalVariants": {
@@ -160,6 +180,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.167",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.167/dist/plasmic.schema.json"
+  "cliVersion": "0.1.170",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.170/dist/plasmic.schema.json"
 }

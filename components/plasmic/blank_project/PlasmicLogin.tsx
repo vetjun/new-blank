@@ -50,7 +50,7 @@ type ArgPropType = keyof PlasmicLogin__ArgsType;
 export const PlasmicLogin__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogin__OverridesType = {
-  root?: p.Flex<"div">;
+  root2?: p.Flex<"div">;
 };
 
 export interface DefaultLoginProps {}
@@ -78,14 +78,15 @@ function PlasmicLogin__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
+          data-plasmic-name={"root2"}
+          data-plasmic-override={overrides.root2}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
             projectcss.all,
             projectcss.root_reset,
-            sty.root
+            projectcss.plasmic_default_styles,
+            sty.root2
           )}
         />
       </div>
@@ -94,13 +95,13 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root2: ["root2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -147,7 +148,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "root2") {
     func.displayName = "PlasmicLogin";
   } else {
     func.displayName = `PlasmicLogin.${nodeName}`;
@@ -157,7 +158,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicLogin = Object.assign(
   // Top-level PlasmicLogin renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("root2"),
   {
     // Helper components rendering sub-elements
 

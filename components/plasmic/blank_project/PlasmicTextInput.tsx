@@ -128,16 +128,26 @@ function PlasmicTextInput__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(projectcss.all, projectcss.root_reset, sty.root, {
-        [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-        [sty.rootcolor_dark]: hasVariant(variants, "color", "dark"),
-        [sty.rootisDisabled]: hasVariant(variants, "isDisabled", "isDisabled"),
-        [sty.rootshowStartIcon]: hasVariant(
-          variants,
-          "showStartIcon",
-          "showStartIcon"
-        )
-      })}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        sty.root,
+        {
+          [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
+          [sty.rootcolor_dark]: hasVariant(variants, "color", "dark"),
+          [sty.rootisDisabled]: hasVariant(
+            variants,
+            "isDisabled",
+            "isDisabled"
+          ),
+          [sty.rootshowStartIcon]: hasVariant(
+            variants,
+            "showStartIcon",
+            "showStartIcon"
+          )
+        }
+      )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
       {(
@@ -227,7 +237,7 @@ function PlasmicTextInput__RenderFunc(props: {
           placeholder={
             args.placeholder !== undefined
               ? args.placeholder
-              : ("Username" as const)
+              : ("Password" as const)
           }
           type={"text" as const}
           value={args.value}
