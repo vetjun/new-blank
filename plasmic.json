@@ -120,6 +120,45 @@
           "cssFilePath": "plasmic/blank_project/PlasmicFeatures.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "ymPlshSjp4",
+          "name": "FormPost",
+          "type": "managed",
+          "projectId": "rdregu4mMb4hXErVfc3qjL",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicFormPost.tsx",
+          "importSpec": {
+            "modulePath": "../pages/form-post.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicFormPost.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "By3pjKN_kh",
+          "name": "NavBarMenu",
+          "type": "managed",
+          "projectId": "rdregu4mMb4hXErVfc3qjL",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicNavBarMenu.tsx",
+          "importSpec": {
+            "modulePath": "../pages/nav-bar-menu.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicNavBarMenu.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "ZoPojSHpjk",
+          "name": "TablePlace",
+          "type": "managed",
+          "projectId": "rdregu4mMb4hXErVfc3qjL",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicTablePlace.tsx",
+          "importSpec": {
+            "modulePath": "../pages/table-place.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicTablePlace.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -162,6 +201,26 @@
           "id": "Uz-bQox2j-",
           "name": "ProductCard",
           "componentImportPath": "./components/ProductCard"
+        },
+        {
+          "id": "9reLl-KAYh",
+          "name": "MyTextInput",
+          "componentImportPath": "./components/custom/MyTextInput"
+        },
+        {
+          "id": "7CJnSohl3d",
+          "name": "MaterialMultiSelect",
+          "componentImportPath": "./components/custom/MaterialMultiSelect"
+        },
+        {
+          "id": "5ilRP34x6Y",
+          "name": "ReactBootstrapNavBar",
+          "componentImportPath": "./components/custom/ReactBootstrapNavBar"
+        },
+        {
+          "id": "Vtz-tLKOpa",
+          "name": "MaterialTable",
+          "componentImportPath": "./components/custom/MaterialTable"
         }
       ],
       "globalContextsFilePath": ""
@@ -180,6 +239,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.170",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.170/dist/plasmic.schema.json"
+  "cliVersion": "0.1.171",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.171/dist/plasmic.schema.json"
 }

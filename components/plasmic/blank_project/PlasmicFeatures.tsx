@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+import * as ph from "@plasmicapp/host";
 
 import {
   hasVariant,
@@ -34,15 +35,14 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import { ProductCard } from "../../ProductCard"; // plasmic-import: Uz-bQox2j-/codeComponent
-import TextInput from "../../TextInput"; // plasmic-import: w14gK1007wL/component
 import Button from "../../Button"; // plasmic-import: V7BbCwr-pLu/component
+import { MyTextInput } from "../../custom/MyTextInput"; // plasmic-import: 9reLl-KAYh/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: rdregu4mMb4hXErVfc3qjL/projectcss
 import sty from "./PlasmicFeatures.module.css"; // plasmic-import: PG86SX5hUp/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: KSBOK07UX8U/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: RCMerZM6K3F/icon
 import Icon3Icon from "./icons/PlasmicIcon__Icon3"; // plasmic-import: vm-uGfGqmSN/icon
 
@@ -59,9 +59,9 @@ export const PlasmicFeatures__ArgProps = new Array<ArgPropType>();
 export type PlasmicFeatures__OverridesType = {
   root?: p.Flex<"div">;
   productCard?: p.Flex<typeof ProductCard>;
-  featuresUsernameInput?: p.Flex<typeof TextInput>;
-  featuresPasswordInput?: p.Flex<typeof TextInput>;
   featuresSubmit?: p.Flex<typeof Button>;
+  custUsernameInput?: p.Flex<typeof MyTextInput>;
+  custPasswordInput?: p.Flex<typeof MyTextInput>;
 };
 
 export interface DefaultFeaturesProps {}
@@ -108,20 +108,6 @@ function PlasmicFeatures__RenderFunc(props: {
             />
           ) : null}
 
-          <TextInput
-            data-plasmic-name={"featuresUsernameInput"}
-            data-plasmic-override={overrides.featuresUsernameInput}
-            className={classNames("__wab_instance", sty.featuresUsernameInput)}
-            placeholder={"Username" as const}
-          />
-
-          <TextInput
-            data-plasmic-name={"featuresPasswordInput"}
-            data-plasmic-override={overrides.featuresPasswordInput}
-            className={classNames("__wab_instance", sty.featuresPasswordInput)}
-            placeholder={"Password" as const}
-          />
-
           <Button
             data-plasmic-name={"featuresSubmit"}
             data-plasmic-override={overrides.featuresSubmit}
@@ -129,6 +115,20 @@ function PlasmicFeatures__RenderFunc(props: {
           >
             {"Submit"}
           </Button>
+
+          <MyTextInput
+            data-plasmic-name={"custUsernameInput"}
+            data-plasmic-override={overrides.custUsernameInput}
+            className={classNames("__wab_instance", sty.custUsernameInput)}
+            placeholder={"username" as const}
+          />
+
+          <MyTextInput
+            data-plasmic-name={"custPasswordInput"}
+            data-plasmic-override={overrides.custPasswordInput}
+            className={classNames("__wab_instance", sty.custPasswordInput)}
+            placeholder={"password" as const}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -139,14 +139,14 @@ const PlasmicDescendants = {
   root: [
     "root",
     "productCard",
-    "featuresUsernameInput",
-    "featuresPasswordInput",
-    "featuresSubmit"
+    "featuresSubmit",
+    "custUsernameInput",
+    "custPasswordInput"
   ],
   productCard: ["productCard"],
-  featuresUsernameInput: ["featuresUsernameInput"],
-  featuresPasswordInput: ["featuresPasswordInput"],
-  featuresSubmit: ["featuresSubmit"]
+  featuresSubmit: ["featuresSubmit"],
+  custUsernameInput: ["custUsernameInput"],
+  custPasswordInput: ["custPasswordInput"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -154,9 +154,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   productCard: typeof ProductCard;
-  featuresUsernameInput: typeof TextInput;
-  featuresPasswordInput: typeof TextInput;
   featuresSubmit: typeof Button;
+  custUsernameInput: typeof MyTextInput;
+  custPasswordInput: typeof MyTextInput;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -217,9 +217,9 @@ export const PlasmicFeatures = Object.assign(
   {
     // Helper components rendering sub-elements
     productCard: makeNodeComponent("productCard"),
-    featuresUsernameInput: makeNodeComponent("featuresUsernameInput"),
-    featuresPasswordInput: makeNodeComponent("featuresPasswordInput"),
     featuresSubmit: makeNodeComponent("featuresSubmit"),
+    custUsernameInput: makeNodeComponent("custUsernameInput"),
+    custPasswordInput: makeNodeComponent("custPasswordInput"),
 
     // Metadata about props expected for PlasmicFeatures
     internalVariantProps: PlasmicFeatures__VariantProps,

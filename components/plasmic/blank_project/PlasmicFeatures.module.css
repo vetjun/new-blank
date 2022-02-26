@@ -26,38 +26,6 @@
   right: 0;
   flex-shrink: 0;
 }
-.featuresUsernameInput:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg___08Bcb {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__yD2L9 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.featuresPasswordInput:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__qYcFr {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__px5UD {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
 .featuresSubmit:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -73,4 +41,19 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
+}
+.custUsernameInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  height: 42px;
+  width: 261px;
+  margin-bottom: 0px;
+  flex-shrink: 0;
+}
+.custPasswordInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 259px;
+  height: 39px;
+  flex-shrink: 0;
 }
